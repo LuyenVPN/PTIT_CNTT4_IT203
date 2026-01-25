@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class B5_s1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Nhập mã sách 4 chữ số: ");
         int number = sc.nextInt();
 
