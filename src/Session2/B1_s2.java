@@ -14,10 +14,12 @@ public class B1_s2 {
             System.out.println("Kết quả: Bạn Đủ điều kiện mượn sách quý hiếm");
         } else {
             if (age < 18) {
-                System.out.println("Bạn chưa đủ tuổi");
+                System.out.println("Kết quả: Bạn Không đủ điều kiện");
+                System.out.println("Lý do: Bạn phải đủ 18 tuổi trở lên");
             }
             if (book >= 3) {
-                System.out.println("Bạn đã mượn quá số lượng cho phép");
+                System.out.println("Kết quả: Bạn Không đủ điều kiện");
+                System.out.println("Lý do: Bạn đã mượn tối đa 3 cuốn sách");
             }
         }
 
