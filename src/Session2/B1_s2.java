@@ -11,7 +11,7 @@ public class B1_s2 {
         int book = sc.nextInt();
 
         if (age >= 18 && book < 3) {
-            System.out.println("Cho phép mượn sách");
+            System.out.println("Kết quả: Bạn Đủ điều kiện mượn sách quý hiếm");
         } else {
             if (age < 18) {
                 System.out.println("Bạn chưa đủ tuổi");
