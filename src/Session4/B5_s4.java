@@ -34,7 +34,6 @@ public class B5_s4 {
                 else if (action.equals("RETURN")) returnCount++;
             }
         }
-
         System.out.println("Tổng BORROW: " + borrowCount);
         System.out.println("Tổng RETURN: " + returnCount);
     }
