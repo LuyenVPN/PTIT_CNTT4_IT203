@@ -160,4 +160,51 @@ public class StudentManager {
         System.out.print("SV điểm thấp nhất: ");
         min.hienThi();
     }
+    public void sapXepTheoDiemTB() {
+        if (count <= 1) {
+            System.out.println("Danh sách không đủ để sắp xếp.");
+            return;
+        }
+
+        for (int i = 0; i < count - 1; i++) {
+            for (int j = 0; j < count - i - 1; j++) {
+                if (students[j].getDiemTB() < students[j + 1].getDiemTB()) {
+                    Student temp = students[j];
+                    students[j] = students[j + 1];
+                    students[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("Đã sắp xếp theo điểm trung bình giảm dần.");
+    }
+    public void sapXepTheoTenAZ() {
+        if (count <= 1) {
+            System.out.println("Danh sách không đủ để sắp xếp.");
+            return;
+        }
+
+        for (int i = 0; i < count - 1; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < count; j++) {
+                if (students[j].getHoTen()
+                        .compareToIgnoreCase(students[minIndex].getHoTen()) < 0) {
+                    minIndex = j;
+                }
+            }
+
+            if (minIndex != i) {
+                Student temp = students[i];
+                students[i] = students[minIndex];
+                students[minIndex] = temp;
+            }
+        }
+
+        System.out.println("Đã sắp xếp theo tên A-Z.");
+    }
+    public boolean isEmpty() {
+        return count == 0;
+    }
+
 }

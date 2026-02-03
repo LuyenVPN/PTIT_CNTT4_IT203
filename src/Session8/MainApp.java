@@ -35,6 +35,39 @@ public class MainApp {
                 case "6":
                     System.out.println("Điểm TB & xếp loại được tính tự động.");
                     break;
+                case "7":
+                    if (manager.isEmpty()) {
+                        System.out.println("Danh sách sinh viên rỗng. Không thể sắp xếp.");
+                        break;
+                    }
+
+                    String chon;
+                    do {
+                        menuSapXep();
+                        System.out.print("Chọn kiểu sắp xếp: ");
+                        chon = sc.nextLine().trim();
+
+                        switch (chon) {
+                            case "1":
+                                manager.sapXepTheoDiemTB();
+                                manager.hienThi();
+                                break;
+
+                            case "2":
+                                manager.sapXepTheoTenAZ();
+                                manager.hienThi();
+                                break;
+
+                            case "0":
+                                break;
+
+                            default:
+                                System.out.println("Lựa chọn không hợp lệ!");
+                        }
+                    } while (!chon.equals("0"));
+                    break;
+
+
                 case "8":
                     manager.thongKe();
                     break;
@@ -55,6 +88,7 @@ public class MainApp {
         System.out.println("4. Cập nhật sinh viên");
         System.out.println("5. Xóa sinh viên");
         System.out.println("6. Tính điểm & xếp loại");
+        System.out.println("7. Sắp xếp sinh viên");
         System.out.println("8. Thống kê");
         System.out.println("9. Thoát");
     }
@@ -199,5 +233,10 @@ public class MainApp {
 
         m.capNhat(ma, ten, tuoi, gt, toan, ly, hoa);
     }
-
+    static void menuSapXep() {
+        System.out.println("\n--- SẮP XẾP SINH VIÊN ---");
+        System.out.println("1. Theo điểm trung bình giảm dần");
+        System.out.println("2. Theo tên A-Z");
+        System.out.println("0. Quay lại");
+    }
 }
