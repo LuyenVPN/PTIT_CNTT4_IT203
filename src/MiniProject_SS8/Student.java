@@ -25,8 +25,10 @@ public class Student {
     }
 
     public void setScore(double score) {
-        if (score>0 && score<10){
-            this.score= score;
+                if (score >= 0 && score <= 10) {
+            this.score = score;
+        } else {
+            System.out.println("Điểm phải nằm trong khoảng 0 - 10");
         }
     }
 
