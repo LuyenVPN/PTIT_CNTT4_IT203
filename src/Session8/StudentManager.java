@@ -51,17 +51,14 @@ public class StudentManager {
         }
         boolean found = false;
 
-        // 1. thử tìm theo mã sinh viên (chính xác)
         int idx = timTheoMa(key);
         if (idx != -1) {
-            System.out.println("Kết quả tìm theo mã sinh viên:");
             System.out.printf("%-10s | %-20s | %-5s | %-8s | %-6s | %-10s\n",
                     "Mã SV", "Họ tên", "Tuổi", "GT", "ĐTB", "Xếp loại");
             students[idx].hienThi();
             return;
         }
 
-        System.out.println("Kết quả tìm theo tên:");
         System.out.printf("%-10s | %-20s | %-5s | %-8s | %-6s | %-10s\n",
                 "Mã SV", "Họ tên", "Tuổi", "GT", "ĐTB", "Xếp loại");
 

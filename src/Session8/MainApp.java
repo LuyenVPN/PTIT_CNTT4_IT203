@@ -22,7 +22,6 @@ public class MainApp {
                     manager.hienThi();
                     break;
                 case "3":
-//                    manager.timTheoTen(nhapChuoi("Nhập tên cần tìm"));
                     String key = nhapChuoi("Nhập mã SV hoặc tên SV");
                     manager.timKiem(key);
                     break;
@@ -93,7 +92,6 @@ public class MainApp {
         System.out.println("9. Thoát");
     }
 
-    /* ===== VALIDATE INPUT ===== */
 
     static String nhapChuoi(String label) {
         String s;
