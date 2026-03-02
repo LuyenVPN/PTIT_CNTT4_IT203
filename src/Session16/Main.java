@@ -20,16 +20,37 @@ public class Main {
             int choice = nhapSoHopLe(0, 6);
 
             switch (choice) {
-                case 1 -> themThuCung();
-                case 2 -> hienThiThuCung();
-                case 3 -> xoaThuCung();
-                case 4 -> themKhachHang();
-                case 5 -> dichVuSpa();
-                case 6 -> logManager.undo();
-                case 0 -> {
+                case 1:
+                    themThuCung();
+                    break;
+
+                case 2:
+                    hienThiThuCung();
+                    break;
+
+                case 3:
+                    xoaThuCung();
+                    break;
+
+                case 4:
+                    themKhachHang();
+                    break;
+
+                case 5:
+                    dichVuSpa();
+                    break;
+
+                case 6:
+                    logManager.undo();
+                    break;
+
+                case 0:
                     thongBao("Thoát chương trình. Tạm biệt!");
                     return;
-                }
+
+                default:
+                    System.out.println("Lựa chọn không hợp lệ.");
+                    break;
             }
         }
     }
