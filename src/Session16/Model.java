@@ -52,17 +52,19 @@ public class Model {
             this.phone = phone;
         }
 
+        public String getPhone() {
+            return phone;
+        }
+
         public String getId() {
             return id;
         }
 
         @Override
         public String toString() {
-            return "Customer{" +
-                    "id='" + id + '\'' +
-                    ", name='" + name + '\'' +
-                    ", phone='" + phone + '\'' +
-                    '}';
+            return "ID: " + id +
+                    " | Tên: " + name +
+                    " | SĐT: " + phone;
         }
     }
 

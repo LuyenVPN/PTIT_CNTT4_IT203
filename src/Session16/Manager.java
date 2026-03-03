@@ -47,6 +47,15 @@ public class Manager {
             return customerMap.get(id);
         }
 
+        public boolean findByPhone(String phone) {
+            for (Customer c : customerMap.values()) {
+                if (c.getPhone().equals(phone)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void displayAll() {
             customerMap.values().forEach(System.out::println);
         }

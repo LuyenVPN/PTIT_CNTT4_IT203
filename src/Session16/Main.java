@@ -132,16 +132,34 @@ public class Main {
     static void themKhachHang() {
         inTieuDe("THÊM KHÁCH HÀNG");
 
-        String id = nhapChuoi("Nhập ID: ");
+        String id;
+        while (true) {
+            id = nhapChuoi("Nhập ID: ");
+            if (customerManager.findById(id) != null) {
+                thongBao("ID đã tồn tại. Vui lòng nhập ID khác.");
+            } else break;
+        }
         String name = nhapChuoi("Tên: ");
-        String phone = nhapChuoi("Số điện thoại: ");
-
+        String phone;
+        while (true) {
+            phone = nhapChuoi("Số điện thoại: ");
+            if (!phone.matches("0\\d{9}")) {
+                System.out.println("Số điện thoại phải có 10 chữ số và bắt đầu bằng 0");
+                continue;
+            }
+            if (customerManager.findByPhone(phone)) {
+                System.out.println("Số điện thoại đã tồn tại!");
+                continue;
+            }
+            break;
+        }
         if (customerManager.add(new Customer(id, name, phone))) {
             logManager.log("Thêm khách hàng " + name);
             thongBao("Thêm thành công.");
         } else {
             thongBao("ID đã tồn tại.");
         }
+        customerManager.displayAll();
     }
 
     // ================= SPA =================
