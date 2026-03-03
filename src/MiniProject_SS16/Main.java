@@ -141,10 +141,11 @@ public class Main {
 
         //      1. Hiển thị danh sách
         System.out.println("=== DANH SÁCH SẢN PHẨM ===");
+        NumberFormat nf = NumberFormat.getNumberInstance();
         for (Product p : list.findAll()) {
             if (p != null) {
                 p.displayInfo();
-                System.out.println("Thành tiền: " + p.calculateFinalPrice());
+                System.out.println("Thành tiền: " + nf.format(p.calculateFinalPrice()));
                 System.out.println("----------------------");
             }
         }
@@ -163,7 +164,6 @@ public class Main {
 //      3. Sắp xếp theo giá tăng
         list.sortByPrice();
         System.out.println("\n=== SAU KHI SẮP XẾP ===");
-        NumberFormat nf = NumberFormat.getNumberInstance();
         for (Product p : list.findAll()) {
             System.out.println(p.getId() + " - " + nf.format(p.getPrice()));
         }
